@@ -1,0 +1,117 @@
+.viewListingsRow {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  background-color: white;
+  column-gap: 10px;
+  margin: 7%;
+  margin-bottom: 20px;
+  min-height: 85vh;
+  padding-top: 10px;
+  
+ 
+
+  .viewListingsCol {
+    // margin-left: 10px;
+    
+    .listingsRow {
+      display: grid;
+      grid-template-columns: 15% 1fr;
+      row-gap: 15px;
+      
+      .listingsCol {
+        position: relative;
+        // padding: 10px;
+        border-bottom: 2px solid #EAECEF;
+        
+        
+        .editgrp{
+          
+          position: absolute;
+          right: 15px;
+          top: 25px;
+          font-size: x-large;
+         
+  
+          *{
+            margin:0 10px;
+            cursor: pointer;
+          }
+
+          .editbutt{
+            color: rgb(236, 222, 16);
+            
+          }
+          .deletebutt{
+            color: rgb(211, 36, 36);
+           
+          }
+        }
+
+        .listingTitle {
+          font-weight: 500;
+          color: rgb(59, 55, 55);
+          font-size: 14px;
+        }
+
+        .listingPrice {
+          margin-bottom: 2px;
+          font-size: 14px;
+          color: rgb(133, 121, 121);
+        }
+
+        .listingBrand{
+          font-size: 12px;
+          margin-left: 5px;
+          color: rgb(133, 121, 121);
+        }
+      }
+
+    }
+  }
+
+  .viewListingsCol:first-child{
+    border-right: 5px solid #EAECEF;
+    
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .viewListingsRow {
+    grid-template-columns: 30% 1fr;
+    .viewListingsCol {
+    .listingsRow {
+      grid-template-columns: 20% 1fr;
+
+    }
+  }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .viewListingsRow {
+    margin: 0;
+    margin-top: 29%;
+
+    row-gap: 50px;
+    grid-template-columns: 1fr;
+    .viewListingsCol {
+    .listingsRow {
+      grid-template-columns: 20% 1fr;
+
+      .listingsCol {
+        font-size: 12px;
+        padding: 10px;
+        border-bottom: 2px solid rgb(228, 221, 221);
+        .listingTitle {
+          font-weight: 500;
+          font-size: 13px;
+        }
+
+        .listingPrice {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  }
+}

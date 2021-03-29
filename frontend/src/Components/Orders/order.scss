@@ -1,0 +1,95 @@
+.order{
+    margin:4% 5%;
+    position: relative;
+    .orderadress{
+        padding-top: 5px;
+        background-color: white;
+    }
+    .ordersection{
+        margin: 0 2%;
+    }
+    .adresshead{
+        padding: 2%;
+        color: white;
+    }
+    .stamp{
+        border: .00002px solid black;
+        background-color: blanchedalmond;
+        font-size: 10px;
+    }
+    .sectionaddress{
+        border-bottom: .00001px solid rgba(0, 0, 0, 0.329);
+    }
+    .sechead{
+        padding-left: 2%;
+    }
+    .adressip{
+        background-color: white;
+    }
+    .rightcol{
+        margin-left: 3%;
+    }
+   
+    
+}
+
+.paybtn{
+    margin-right: 4%;
+    width: 20%;
+}
+
+.orderlist{
+    margin: 8% 12%;
+    background-color: white;
+    
+    
+    .date{
+        font-size: 13px;
+        font-weight: 600;
+    }
+   .colorlight{
+       color:grey
+   }
+   
+    
+}
+
+.loaderinorder{
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(128, 128, 128, 0.205);
+    
+    position: absolute;
+    z-index: 1;
+    .loaderorder{
+        width: 20%;
+        height: 20%;
+        top:50%;
+        left:50%;
+        position: absolute;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .order{
+        margin:0;
+        .rightcol{
+            margin-left: 0;
+        }
+    }
+    .orderlist{
+        margin: 0;
+        padding-left: 1%;
+        text-align: center;
+        .orderdetails{
+            margin-top: 4%;
+        }
+    }
+    .paybtn{
+        width: 40%;
+    }
+}
+

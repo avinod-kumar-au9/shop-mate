@@ -1,0 +1,44 @@
+.ListdividerRow{
+    display: grid;
+    grid-template-columns: 18% 1fr;
+    column-gap: 10px;
+   
+}
+
+.loaderRow {
+    display: grid;
+    grid-template-columns: 20%;
+    justify-content: center;
+    align-content: center;
+    min-height: 90vh;
+    background-color: white;
+  
+    .loaderCol {
+      .loader {
+        width: 100%;
+        transform: scale(2);
+      }
+    }
+  }
+
+  
+@media only screen and (max-width: 800px) {
+    .ListdividerRow{
+        display: grid;
+        grid-template-columns: 25% 1fr;
+        column-gap: 10px;
+       
+    }
+    
+  }
+  
+@media only screen and (max-width: 600px) {
+    .ListdividerRow{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+       
+    }
+    
+  }
+  

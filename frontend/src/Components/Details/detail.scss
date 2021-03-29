@@ -1,0 +1,115 @@
+.detailpage{
+    background-color: white;
+    margin: 2px;
+  
+    .imgfield{
+        border-right: 1px solid rgba(0, 0, 0, 0.315);
+    }
+    .img1{
+       padding-left: 3%;
+        text-align: center;
+       width: fit-content;
+        
+    }
+
+    .img2{
+        height: 380px;
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+    .imgdimension{
+        height:120%;
+    }
+
+    .viewscolor{
+        margin: 5px;
+        padding:5px
+    }
+
+    .views{
+        margin:6px;
+        padding:5px;
+        outline:none;
+        border: none;
+        // border:2px solid black
+    }
+    .views:hover{
+        border:red 2px solid
+    }
+    .listrating{
+        font-size: 13px;
+        background-color: rgb(20, 119, 20);
+        color: white;
+        padding: 3px 4px;
+        border-radius: 5px;
+        width:fit-content
+    }
+    .size{
+        padding:5%;
+        margin:5%;
+        font-size: 70%;
+        border: none;
+        
+    }
+    .icondet{
+        color:blue;
+        margin-right: 8px;
+    }
+    .sidehead{
+        color: rgba(0, 0, 0, 0.452);
+        margin-right: 50px;
+    }
+    .icondetail{
+        
+        width: 50%;
+        height: 25%;
+    }
+    b{
+        margin-right: 5px;
+    }
+    .linktext{
+        font-size: 13px;
+        color: black;
+    }
+    .arrow{
+        margin-top: 10px;
+       
+    }
+    .margin{
+        margin-right: 3%;
+    }
+    
+    .links:hover{
+        color:blue
+    }
+    .img-wrapper{
+        overflow:hidden;
+      }
+    img.hover-zoom:hover {
+        transform: scale(1.25);
+      }
+    .rightcols{
+        height: 500px;
+        overflow-y: scroll;
+        padding-left: 3%;
+      }
+      .username{
+          font-size: 14px;
+          font-weight: 700;
+      }
+      .randonicon{
+        font-size: 14px;
+      }
+      .colors{
+        display: flex;
+      }
+}
+
+@media only screen and (max-width: 1030px) {
+    .detailpage{
+    .imgfield{
+        border-right:2px solid white;
+    }}
+}
+

@@ -1,0 +1,83 @@
+.electronicsDiv {
+  background-color: white;
+  margin-top: 10px;
+
+  .electronicsTitle {
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(214, 211, 211);
+    margin-left: 20px;
+  }
+
+  .electronics {
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+
+    .slider {
+      padding: 3px 0;
+      cursor: pointer;
+      height: auto;
+      display: grid;
+      place-items: center;
+      
+
+      .electronicsText {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 600;
+        font-size: 13px;
+        text-align: center;
+      }
+
+      
+      
+      .electronicsBrand {
+        color: rgb(151, 137, 137);
+        font-size: 13px;
+        text-align: center;
+      }
+      
+    }
+
+    .slider:hover {
+      
+      transform: scale(1.03);
+      
+    }
+     
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .electronicsDiv {
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .electronicsTitle {
+      padding: 10px 0;
+      border-bottom: 1px solid rgb(214, 211, 211);
+      margin-left: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  .electronicsDiv {
+    .electronicsBrand {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .electronicsDiv {
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .electronicsTitle {
+      font-size: larger;
+    }
+  }
+}

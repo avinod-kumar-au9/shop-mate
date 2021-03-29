@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: #111;
+    margin-top: auto;
+}
+
+.main-content {
+    display: flex;
+    .box {
+        flex-basis: 50%;
+        padding: 10px 20px;
+        // margin-top: 100vh;
+        
+    }
+}
+
+
+.box {
+    .h2 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        // margin-top: 100vh;
+    }
+    .content {
+        margin: 20px 0 0 0;
+        position: relative;
+        // margin-top: 100vh;
+    }
+    .content:before {
+        position: absolute;
+        content: '';
+        top: -10px;
+        height: 2px;
+        width: 100%;
+        background: green;
+        // margin-top: 100vh;
+    }
+    .content:after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 15%;
+        background: #f12020;
+        top: -10px;
+        padding-left: 100px;
+    }
+}
+
+.left {
+    .content p {
+        text-align: justify;
+    }
+    .content .social {
+        margin: 20px 0 0 0;
+    }
+    .content .social a {
+        padding: 0 2px;
+    }
+    .content .social a span {
+        height: 40px;
+        width: 40px;
+        background: #1a1a1a;
+        line-height: 40px;
+        text-align: center;
+        font-size: 18px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    .content .social a span:hover {
+        background: #f12020;
+    }
+}
+
+
+.center {
+    .content .fas {
+        font-size: 1.4375rem;
+        background: #1a1a1a;
+        height: 45px;
+        width: 45px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+    .content .fas:hover {
+        background: #f12020;
+    }
+    .content .text {
+        font-size: 1.0625rem;
+        font-weight: 500;
+        padding-left: 100px;
+    }
+    .content .phone {
+        margin: 15px 0;
+    }
+}
+
+.right {
+    form .text {
+        font-size: 1.0625rem;
+        margin-bottom: 2px;
+        color: #656565;
+    }
+    form .msg {
+        margin-top: 10px;
+    }
+    form input,
+    form textarea {
+        width: 100%;
+        font-size: 1.0625rem;
+        background: #151515;
+        padding-left: 10px;
+        border: 1px solid #222222;
+    }
+    form input:focus,
+    form textarea:focus {
+        outline-color: #3498db;
+    }
+    form .btn button:hover {
+        background: #000;
+    }
+}
+
+
+.bottom {
+    center {
+        // padding: 5px;
+        font-size: 10px;
+        background: #151515;
+    }
+    center span {
+        color: whitesmoke;
+    }
+    center a {
+        color: #f12020;
+        text-decoration: none;
+    }
+    center a:hover {
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+
+li {
+    list-style-type: none;
+}
+
+.h2 {
+    padding-left: 100px;
+}
+
+h {
+    padding-right: 1px;
+}
+
+#footer {
+    color: #d9d9d9;
+}
+
+.social {
+    display: flex;
+    // justify-content: center;
+    justify-content: start;
+    flex-grow: 5;
+    margin: 6px 0 0 0;
+    font-size: 1.1925rem;
+}
+
+.hr {
+    background-color: whitesmoke;
+    padding: none;
+    margin: 25px 0 6.5px 0
+}
+
+.soc {
+    padding-left: 20px
+}
+
+.right {
+    text-decoration: none;
+    font-size: 1.2925rem;
+    color: white;
+}
+
+.h6 {
+    margin: 0 0 6px 0;
+    color: white;
+    font-size: 1.2925rem;
+    display: inline;
+}
+
+.Dmt {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5rem;
+    color: white;
+    width: 100%;
+    padding: 15px 0 0 45%; // display: inline;
+}
+
+.glow {
+    color: white;
+    text-align: start;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #fff, 0 0 20px green, 0 0 30px white, 0 0 40px green, 0 0 50px white, 0 0 60px green, 70px maroon;
+}
+
+.text1 {
+    padding-left: 100px;
+}
+
+.rights {
+    font-size: 1.3925rem;
+}

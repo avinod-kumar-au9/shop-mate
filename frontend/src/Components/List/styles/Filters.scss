@@ -1,0 +1,146 @@
+.filterRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  margin-bottom: 10px;
+
+  .filtitle {
+    display: block;
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 21px;
+    cursor: pointer;
+  }
+  .FiltersClearAll{
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: red;
+  }
+
+  .FiltersClearAll:hover{
+    color: rgb(70, 70, 175);
+  }
+
+  .filterCol {
+    margin-bottom: 15px;
+
+    .filtertitle {
+      position: relative;
+      margin-left: 20px;
+      margin-top: 30px;
+      font-size: 14px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgb(231, 223, 223);
+      cursor: pointer;
+
+      .mainarrowfilters{
+        position: absolute;
+        font-size: 20px;
+        top: -5px;
+      }
+    }
+    .categoryfiltermaindiv {
+      display: inline;
+      // border: 1px solid red;
+      margin-left: 20px;
+      margin-bottom: 10px;
+
+      * {
+        display: inline;
+      }
+
+      .filtercategoryitem {
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 480;
+        text-align: center;
+      }
+      .categoryfilterarrow {
+        // border: 1px solid grey;
+        padding: 0;
+        margin: 0;
+        font-size: 13px;
+        text-align: center;
+      }
+    }
+
+    .filtersubcategoryitems {
+      margin-left: 40px;
+      margin-top: 0;
+      font-size: 15px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      color: rgba(10, 10, 10, 0.637);
+    }
+
+    .filterbrandname {
+      display: block;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .filterbrandcheck {
+      margin-left: 20px;
+      margin-right: 10px;
+      font-size: 15px;
+    }
+    .filterpriceone {
+      margin-left: 20px;
+    }
+    .filterpriceinput {
+      display: inline;
+      width: 30%;
+      text-align: center;
+      border: 2px solid rgb(182, 174, 174);
+    }
+
+    .filterpriceto {
+      margin: 0 10px;
+      color: rgb(126, 114, 114);
+    }
+
+    .filterpricebutton {
+      display: block;
+      margin-left: 20px;
+      margin-top: 10px;
+      border: 1px solid rgb(183, 185, 178);
+      outline: none;
+      background-color: white;
+      padding: 3px 30px;
+    }
+
+    .filteroffername {
+      display: block;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .filteroffercheck {
+      margin-left: 20px;
+      margin-right: 10px;
+      font-size: 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .filterRow {
+    margin-bottom: 20px;
+    grid-template-columns: 1fr;
+    .filtitle {
+      border: 1px solid rgb(235, 229, 229);
+      padding: 5px;
+      // background-color: rgb(241, 238, 238);
+      width: max-content;
+    }
+
+    .filterCol {
+      .filterpriceinput {
+        display: inline;
+        width: 20%;
+        text-align: center;
+        border: 2px solid rgb(182, 174, 174);
+      }
+    }
+  }
+}

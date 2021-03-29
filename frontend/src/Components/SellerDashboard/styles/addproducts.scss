@@ -1,0 +1,107 @@
+.sellerForm {
+
+  .sellerRow {
+    display: grid;
+    grid-template-columns: 25% 50%;
+    justify-content: center;
+    margin:7% 0%;
+    margin-bottom: 20px;
+    min-height: 80vh;
+    column-gap: 5px;
+    
+
+    .sellerCol {
+      background-color: white;
+      border: 1px solid rgb(209, 202, 202);
+
+      * {
+        margin-bottom: 10px;
+      }
+
+      .sellerTitle {
+        margin-left: 10px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+
+      .productsWithDifferentcolours {
+        border: 2px solid rgb(185, 187, 190);
+        border-left:none ;
+        padding: 30px;
+
+        .productsWithDifferentcoloursTitle {
+          margin-left: 10px;
+          margin-top: 10px;
+          margin-bottom: 30px;
+          font-weight: 500;
+          color: rgb(224, 24, 117);
+        }
+
+        .productcolorsbutt {
+          margin-left: 20px;
+          width: 150px;
+          // background-color: #7a7a9b;
+        }
+      }
+
+      .productsaddbutton {
+        margin-left: 20px;
+        margin-top: 30px;
+        width: 130px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .sellerForm {
+    .sellerRow {
+      display: grid;
+      grid-template-columns: 30% 60%;
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sellerForm {
+    .sellerRow {
+      display: grid;
+      grid-template-columns: 28% 68%;
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .sellerForm {
+    .sellerRow {
+      display: grid;
+      grid-template-columns: 95%;
+      justify-content: center;
+      margin: 0;
+      margin-top: 30px;
+
+      .sellerCol {
+        background-color: white;
+
+        .productsWithDifferentcolours {
+          border: 2px solid rgb(201, 143, 143);
+          padding: 0;
+
+          .productcolorsbutt {
+            margin-left: 20px;
+            width: 100px;
+          }
+        }
+        .productsaddbutton {
+          margin-left: 20px;
+          margin-top: 30px;
+          width: 120px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}

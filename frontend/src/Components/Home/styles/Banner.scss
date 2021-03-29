@@ -1,0 +1,36 @@
+.bannerSize{
+    height: 350px;
+    cursor: pointer;
+  }
+
+
+  @media only screen and (max-width: 1400px) {
+    
+    .buttonDisable{
+      visibility: visible;
+    }
+
+  }
+  @media only screen and (max-width: 992px) {
+    .buttonDisable{
+      visibility: visible;
+    }
+    
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    .buttonDisable{
+      visibility: hidden;
+    }
+    
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+    .buttonDisable{
+      visibility: hidden;
+    }
+    
+  }

@@ -1,0 +1,73 @@
+.sellerHomeRow {
+  background-color: white;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  justify-items: center;
+  align-items: center;
+  min-height: 90vh;
+
+  .sellerHomeCol {
+    .sellerhometitle {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .sellerhometitle2 {
+      font-style: oblique;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin-top: 30px;
+    }
+    .sellerhomeimg {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sellerHomeRow {
+    grid-template-columns: 50% 1fr;
+
+    .sellerHomeCol {
+      .sellerhometitle {
+        font-style: italic;
+        font-weight: 700;
+        font-size: 30px;
+      }
+
+      .sellerhometitle2 {
+        font-style: oblique;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 30px;
+      }
+      .sellerhomeimg {
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .sellerHomeRow {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    .sellerHomeCol {
+      .sellerhometitle {
+        font-style: italic;
+        font-weight: 700;
+        font-size: 25px;
+        // margin: 50px;
+        margin-top: 80px;
+      }
+
+      .sellerhometitle2 {
+        font-style: oblique;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+      .sellerhomeimg {
+        width: 100%;
+      }
+    }
+  }
+}

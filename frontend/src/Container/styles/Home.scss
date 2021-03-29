@@ -1,0 +1,17 @@
+.loaderRow {
+  display: grid;
+  grid-template-columns: 20%;
+  justify-content: center;
+  align-content: center;
+  min-height: 90vh;
+  background-color: white;
+
+  .loaderCol {
+    .loader {
+      width: 100%;
+      transform: scale(2);
+    }
+  }
+}
+
+

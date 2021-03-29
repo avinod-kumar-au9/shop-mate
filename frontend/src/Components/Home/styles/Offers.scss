@@ -1,0 +1,79 @@
+.discountsDiv {
+  background-color: white;
+  margin-top: 10px;
+
+  .discountsTitle {
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(214, 211, 211);
+    margin-left: 20px;
+  }
+
+  .discounts {
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+
+    .slider {
+      padding: 3px 0;
+      cursor: pointer;
+      height: auto;
+      display: grid;
+      place-items: center;
+
+      * {
+        text-align: center;
+      }
+      .discountText {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .discountsBrand {
+        color: rgb(151, 137, 137);
+        font-size: 13px;
+      }
+    }
+    .slider:hover {
+      
+      transform: scale(1.03);
+      
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .discountsDiv {
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .discountsTitle {
+      padding: 10px 0;
+      border-bottom: 1px solid rgb(214, 211, 211);
+      margin-left: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  .discountsDiv {
+    .discountsBrand {
+      // margin-left: 60px;
+      text-align: center;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .discountsDiv {
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .discountsTitle {
+      font-size: larger;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+body{
+    background-color: #EAECEF
+}
+
+.sidetop,.sidebottom{
+    background-color: white;
+    padding:10px
+}
+
+.proimg{
+    
+    font-size: 25px;
+    border-radius: 50%;
+    padding: 7px 6px 0 7px;
+    margin-right: 15px;
+    position: relative;
+    border: 2px solid rgb(240, 234, 234);
+
+    .profileimguploadcamera{
+        position: absolute;
+        top: 48px;
+        right: -5px;
+        color: rgb(155, 144, 144);
+        cursor: pointer;
+    }
+}
+.arrowright{
+    float: right;
+}
+.ordercolor{
+    color: rgba(0, 0, 0, 0.411);
+    font-size: 20px;
+    // font-weight: 100;
+}
+
+.rightsection{
+    background-color: white;
+    padding: 20px;
+    .sechead{
+        padding: 13px;
+    }
+}

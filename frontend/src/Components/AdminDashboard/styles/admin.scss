@@ -1,0 +1,161 @@
+
+.adminmaindiv{
+  padding-top: 20px;
+  
+  
+.adminpage {
+  margin: 0 100px;
+
+  .adminpagetitle {
+    color: #5f5faf;
+   
+  }
+  .orderslistresultsdisplay {
+    font-size: 16px;
+    color: #626268;
+  }
+  .orderslisttable {
+    margin-top: 5px;
+    border: .00003px solid rgba(128, 128, 128, 0.212);
+    background-color: white;
+
+    .productimagecol {
+      width: 7%;
+      color: rgb(136, 159, 180);
+    }
+    .productactionRow {
+      border: none;
+      outline: none;
+      color: rgb(19, 18, 18);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      border-radius: 10px;
+      color: rgba(228, 65, 24, 0.808);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .productnamecol {
+      width: 40%;
+      overflow: hidden;
+      color: rgb(136, 159, 180);
+    }
+
+    .productqtycol {
+      width: 10%;
+      cursor: pointer;
+      color: rgb(136, 159, 180);
+    }
+    .productpricecol {
+      cursor: pointer;
+      color: rgb(136, 159, 180);
+    }
+    .productstatuscol {
+      cursor: pointer;
+      color: rgb(136, 159, 180);
+    }
+
+    .productactioncol {
+      color: rgb(136, 159, 180);
+      width: 7%;
+    }
+
+    .adminproductimage { 
+      height: 40px;
+    }
+
+    .productimgrcol {
+      display: grid;
+      place-items: center;
+    }
+
+    .adminsortarrows {
+      font-size: 17px;
+    }
+  }
+  .paginatioRow {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: white;
+    border: .00003px solid rgba(128, 128, 128, 0.212);
+    padding-top: 1%;
+    margin-bottom: 2%;
+    .paginatioCol {
+      justify-self: center;
+
+      .page-item {
+        padding: 5px;
+      }
+    }
+  }
+}
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .adminmaindiv{
+  .adminpage {
+    margin: 0;
+    .orderslisttable {
+      
+      .productimagecol {
+        width: 1%;
+      }
+
+      .productqtycol {
+        width: 10%;
+      }
+      
+
+      .productactioncol {
+        color: rgb(136, 159, 180);
+        width: 5%;
+      }
+    }
+    .paginatioRow {
+      margin: 0;
+    }
+  }
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .adminmaindiv{
+  .adminpage {
+    margin: 0;
+    .orderslisttable {
+      
+      font-size: 13px;
+      .productimagecol {
+        display: none;
+      }
+
+      .productimgrcol{
+        display: none;
+      }
+
+      .productqtycol {
+        width: 25%;
+        
+      }
+
+      .productpricecol {
+        display: none;
+      }
+
+      .productpriceRow{
+        display: none;
+      }
+
+    }
+
+    .paginatioRow {
+      margin: 0;
+    }
+  }
+}
+
+}

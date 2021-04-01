@@ -16,7 +16,6 @@ const ProfileDetail = (props) => {
   const [isGoing,setIsGoing]=useState(false)
   const [disable,setDisable] = useState(true)
   const [gender,setGender] = useState('')
-  const [passwords,setPassword] = useState('')
   const [errs,setErr] = useState('')
   const [cpsw,setCpsw] = useState('')
   const [showpsw,setShowpsw] = useState("password")
@@ -80,35 +79,12 @@ useEffect(()=>{
     setDisable(false) 
   }
 
-  const passwordRender=(e)=>{
-    if(e.target.value.length < 6){
-      setErr('Password should be atleast 6 characters')
-    }else{setErr('')}
-    setPassword(e.target.value)  
-   }
-   
-   const cpswRender=(e)=>{
-    setCpsw(e.target.value)
-   }
-   
-   const handleInputChange=()=>{
-      setIsGoing(!isGoing)
-      if(showpsw === "password"){
-        setShowpsw("text")
-      }
-      else{
-        setShowpsw("password")
-      }
-   }
 
   const saveRender=(e)=>{
     if(ferr || emaerr ){
       setErrall("Fill valid adress")
     } 
-    else if(passwords !== cpsw){
-      setErrall('')
-      setErr('Passwords didn’t match')
-    }else{
+   else{
       axios
       .get(
         `https://emailverification.whoisxmlapi.com/api/v1?apiKey=at_NNjRtJeDX5g5bGgllgC7u8y6bgh9x&emailAddress=${email}`
@@ -122,7 +98,7 @@ useEffect(()=>{
             setErrall('')
             setErr('')
             setNumerr('')
-            props.update(fname,lname,gender,email,phonenum,passwords)
+            props.update(fname,lname,gender,email,phonenum)
           }
         }
       else{
@@ -144,8 +120,7 @@ useEffect(()=>{
       phoneNumRender={phoneNumRender} editRender={editRender} disable={disable}
       saveRender={saveRender} emaerr={emaerr} aerr={aerr} numerr={numerr}
       changegenderMale={changegenderMale} changegenderFemale={changegenderFemale} gender={gender}
-      passwordRender={passwordRender} cpswRender={cpswRender} handleInputChange={handleInputChange}
-      passwords={passwords} errs={errs} cpsw={cpsw} ferr={ferr} 
+      errs={errs} cpsw={cpsw} ferr={ferr} 
       />
     </>
   )

@@ -3,6 +3,9 @@
     position: relative;
     margin : 5px 0 0 0;
   }
+  .mailconformationbtn{
+    margin-left: 6%;
+  }
   
   .inputBox input {
     width: 236px;
@@ -51,20 +54,31 @@
 //   margin-top: 10px;
 // }
 
-  .errmsg,.errmsg2{
-    color: red;
-    font-size: 13px;
-    margin-left: 15px;
+.errmsg,.errmsg2{
+  color: red;
+  font-size: 13px;
+  margin-left: 15px;
+}
+.errmsg2{
+  margin-top: 10px;
+}
+.checkbox{
+  margin-left: 5px;
+}
+  .otpmsg{
+    font-size: 80%;
+    margin-left: 6%;
   }
-  .errmsg2{
-    margin-top: 10px;
-  }
-  .checkbox{
-    margin-left: 5px;
-  }
-
 .signupimg{
   margin-top: 40%;
   width:100%;
   // height: 550%;
 }
+
+@media only screen and (max-width: 600px) {
+  .formrigth{
+    margin-top: 10px;
+  }
+}
+
+

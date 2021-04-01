@@ -9,9 +9,11 @@ import Loader from "./Loader";
 
 const Details = (props) => {
   var id = props.match.params.id
-
   const [productincart,setProductincart] = useState(false)
-
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  })
   useEffect(() => {
     props.dispatch(singleProductInfo(id))
     props.dispatch(SimilarProductsList(props.match.params.id));

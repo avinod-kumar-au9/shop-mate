@@ -11,6 +11,10 @@ const Orders = (props) => {
 
   useEffect(()=>{
     props.dispatch(Userinfo(props.location.pathname))
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    })
   },[])
 
   useEffect(()=>{

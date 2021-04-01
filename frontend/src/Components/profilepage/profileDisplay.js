@@ -3,7 +3,7 @@ import React from 'react'
 const profile = (props) => {
     const{fnameRender,lnameRender,fname,lname,mailRender,emailid,phoneNumRender,phonenum,editRender,disable,
         saveRender,ferr,emaerr,numerr,aerr,gender,changegenderMale,changegenderFemale,showpsw,errs,isGoing,
-        handleInputChange,passwords,passwordRender,cpswRender,cpsw
+      
     }=props
   return (
     <div className="rightsection">
@@ -52,30 +52,7 @@ const profile = (props) => {
           </div>    
       </div>
       <p className='errmsg2'>{numerr}</p>
-      <h5 className='sechead'>Change Password</h5>
-      <div className='d-flex '>
-        <div className="form-group ">
-        <div className="inputBox control-label col-sm-2">
-            <input  type={showpsw} disabled={disable}  required  onChange={(e)=>passwordRender(e)} value={passwords}/>
-            <label>Password</label>
-          </div>
-        
-      </div>
-      
-        <div className="form-group d-inline">
-        <div className="inputBox control-label col-sm-2">
-            <input type={showpsw} name="csw" disabled={disable} required onChange={(e)=>cpswRender(e)} value={cpsw}/>
-            <label>ConformPassword</label>
-          </div>
-
-      </div>
-
-      </div>
-      <span className='errmsg'>{errs}</span>
-      <div>
-        <input className='ml-3' type="checkbox" checked={isGoing} disabled={disable}  onChange={(e)=>handleInputChange(e)} value={passwords}/>
-        <label className='checkbox'>Show Password</label>
-      </div>
+     
       <p className='errmsg2'>{aerr}</p>
 
       {disable &&

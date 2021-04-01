@@ -8,6 +8,7 @@ import {
   Logindata,
   ForgotPswdata,
   Googledata,
+  EmailRegistercheck
 } from "../../Actions/userActions";
 import Login from "./LoginDisplay";
 import axios from "axios";
@@ -27,11 +28,16 @@ const Logindisplay = (props) => {
   const [isGoing, setIsGoing] = useState(false);
   const [showpsw, setShowpsw] = useState("password");
   const [modalClose, setmodalClose] = useState("");
-  const [spinner, setSpinner] = useState(false);
+  const [spinner, setSpinner] = useState("");
+  const [emailvalidate, setEmailvalidate] = useState(false);
+  const [otpvalidata, setOtpvalidata] = useState(false);
+  const [otp, setOtp] = useState(false);
   const closemodalafterlogin= useRef(null)
 
+
   useEffect(()=>{
-    setSpinner(false)
+    setSpinner('')
+   
   },[])
 
   useEffect(() => {
@@ -52,7 +58,7 @@ const Logindisplay = (props) => {
   }, [props.data.data]);
 
   useEffect(() => {
-    setSpinner(false);
+    setSpinner("");
     if (props.data.Rdata) {
       if (props.data.Rdata.message === "Registered Successfully") {
         toast(props.data.Rdata.message,{
@@ -69,7 +75,7 @@ const Logindisplay = (props) => {
 
 
   useEffect(() => {
-    setSpinner(false);
+    setSpinner("");
     if (props.SelleruserInfo.Rdata) {
       if (props.SelleruserInfo.Rdata.message === "Registered Successfully") {
         toast(props.SelleruserInfo.Rdata.message,{
@@ -87,17 +93,13 @@ const Logindisplay = (props) => {
  
   
   useEffect(() => {
-    setSpinner(false);
+    setSpinner("");
     if (props.data.Ldata) {
       if (props.data.Ldata.messagep) {
         setErrall(props.data.Ldata.messagep);
-      } else if (props.data.Ldata.message === "Login Successfully") {
-      
-        toast(props.data.Ldata.message, {
-          
+      } else if (props.data.Ldata.message === "Login Successfully") {      
+        toast(props.data.Ldata.message, {          
           autoClose: 2000
-          
-          
           });
         setPassword("");
         setEmail("");
@@ -115,7 +117,7 @@ const Logindisplay = (props) => {
 
 
   useEffect(() => {
-    setSpinner(false);
+    setSpinner("");
     if (props.SelleruserInfo.Ldata) {
       if (props.SelleruserInfo.Ldata.messagep) {
         setErrall(props.SelleruserInfo.Ldata.messagep);
@@ -139,10 +141,21 @@ const Logindisplay = (props) => {
     }
   }, [props.SelleruserInfo.Ldata]);
 
+  useEffect(() => {
+    setSpinner("");
+    if (props.data.Pdata) {
+      if (props.data.Pdata.message === 'Mail exist') {
+        setEmailvalidate(true);
+        setEmaerr('')
+      } else {
+        setEmaerr('Email is not registered');
+      }
+    }
+  }, [props.data.Pdata]);
+
 
   const registerRnder = () => {
-    setSpinner(false)
-    console.log("here");
+    setSpinner("")
     props.dispatch(Clickdata("signup"));
   };
 
@@ -152,6 +165,8 @@ const Logindisplay = (props) => {
 
   const pswRender = () => {
     props.dispatch(Clickdata("forgotpsw"));
+    setOtpvalidata(false)
+    setEmailvalidate(false)
   };
 
   const fnameRender = (e) => {
@@ -191,6 +206,10 @@ const Logindisplay = (props) => {
     setCpsw(e.target.value);
   };
 
+  const otpRender = (e) => {
+    setOtp(e.target.value);
+  };
+
   const handleInputChange = () => {
     setIsGoing(!isGoing);
     if (showpsw === "password") {
@@ -208,7 +227,7 @@ const Logindisplay = (props) => {
       setErrall("Please fill all fields");
     }else {
       setErrall("");
-      setSpinner(true);
+      setSpinner("true");
       axios
         .get(
           `https://emailverification.whoisxmlapi.com/api/v1?apiKey=at_NNjRtJeDX5g5bGgllgC7u8y6bgh9x&emailAddress=${email}`
@@ -217,7 +236,7 @@ const Logindisplay = (props) => {
           if (resp.data.smtpCheck) {
             if (resp.data.smtpCheck === "false") {
               setErrall("Mail is not found in google mail server");
-              setSpinner(false);
+              setSpinner("");
             } else {
               setErr("");
               setErrall("");
@@ -233,7 +252,7 @@ const Logindisplay = (props) => {
             }
           } else {
             setErrall("Something went wrong, comeback later");
-            setSpinner(false);
+            setSpinner("");
           }
         });
     }
@@ -245,7 +264,7 @@ const Logindisplay = (props) => {
       setErrall("Please fill both the fields");
     } else {
       setErrall("");
-      setSpinner(true);
+      setSpinner("true");
       props.dispatch(Logindata(email, passwords, props.location.pathname));
   
     }
@@ -253,25 +272,22 @@ const Logindisplay = (props) => {
 
   const resetpswSubmit = (e) => {
     e.preventDefault();
-    // console.log(validate)
     if (errs || !validate || !passwords) {
       setErrall("Please fill all the fields");
     } else if (passwords !== cpsw) {
       setErrall("Passwords didn’t match");
     } else {
       setErrall("");
-      setSpinner(true);
+      setSpinner("true");
       props.dispatch(ForgotPswdata(email, passwords, props.location.pathname));
     }
   };
-
   const responseGoogle = (response) => {
     if (!response && !response.accessToken) {
       alert("Error While Login");
-    } else {
-      setSpinner(true);
+    } if(response && response.accessToken) {
+      setSpinner("true");
       localStorage.setItem("token", response.accessToken);
-      // console.log('res',response.profileObj)
       props.dispatch(
         Googledata(
           response.profileObj.givenName,
@@ -281,6 +297,32 @@ const Logindisplay = (props) => {
       );
     }
   };
+
+
+  const checkemailregister=(e)=>{
+    e.preventDefault();
+    setOtpvalidata(false)
+    setOtp('')
+    if(email){
+      props.dispatch(EmailRegistercheck(email,props.location.pathname))
+    }else{
+      setEmaerr('Enter email ')
+    }  
+  }
+
+  const checkotpvalidate=(e)=>{
+    e.preventDefault();
+    if(otp.length > 0){
+      if(otp === props.data.Pdata.OTP){
+        setOtpvalidata(true)
+        setEmailvalidate(false)
+        setEmaerr('')
+      }else{
+        setEmaerr('OTP not match')
+      }
+    }  
+  }
+
 
   return (
     <div>
@@ -312,6 +354,12 @@ const Logindisplay = (props) => {
         auth={props.adata}
         spinner={spinner}
         closemodalafterlogin={closemodalafterlogin}
+        checkemailregister={checkemailregister}
+        emailvalidate={emailvalidate}
+        otpvalidata={otpvalidata}
+        checkotpvalidate={checkotpvalidate}
+        otp={otp}
+        otpRender={otpRender}
       />
     </div>
   );

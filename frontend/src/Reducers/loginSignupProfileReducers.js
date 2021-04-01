@@ -15,7 +15,6 @@ export default function loginSignupdata(state,action){
             return{...state, Rdata:action.payload}
         case 'LOGIN':
             return{...state, Ldata:action.payload}
-     
         case 'FORGOTPSW':
             return{...state, Pdata:action.payload}
         case 'TEST':

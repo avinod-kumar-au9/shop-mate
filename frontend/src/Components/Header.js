@@ -238,7 +238,7 @@ const Header = (props) => {
                      <div id="signupdisplay">
                         New Customer?{" "}
                         <Link
-                        to=''
+                        to='#'
                           className="ml-3"
                           data-toggle="modal"
                           data-target="#myModal"
@@ -399,7 +399,7 @@ const Header = (props) => {
                       <div id="signupdisplay">
                         New Customer?{" "}
                         <Link
-                        to=''
+                        to='#'
                           className="ml-3"
                           data-toggle="modal"
                           data-target="#myModal"

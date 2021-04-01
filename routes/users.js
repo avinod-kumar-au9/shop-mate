@@ -3,6 +3,7 @@ import {
   register,
   users,
   login,
+  mailregistercheck,
   googlelogin,
   forgotpsw,
   profileedit,
@@ -14,6 +15,7 @@ import {
   addDeliveryAdress,
   discountamtAdded,
   cartAlldataRemove,
+
 } from "../controllers/registerUsers/users.js";
 
 const router = express.Router();
@@ -21,6 +23,7 @@ const router = express.Router();
 router.post("/register", register);
 router.get("/userdata", users);
 router.post("/login", login);
+router.post("/emailregistercheck",mailregistercheck);
 router.post("/googlelogin", googlelogin);
 router.patch("/forgotpsw", forgotpsw);
 router.patch("/profile", profileedit);

@@ -37,7 +37,8 @@ const Login = (props) => {
     responseGoogle,
     spinner,
     closemodalafterlogin,
-    // logout,auth
+    checkemailregister,
+    otpvalidata,emailvalidate,otpRender,otp,checkotpvalidate
   } = props;
 
   const contentRender = () => {
@@ -160,7 +161,7 @@ const Login = (props) => {
             <p className="registerLink">
               All ready member?
               <span>
-                <Link to='' onClick={loginRender}>Login</Link>
+                <Link to='#' onClick={loginRender}>Login</Link>
               </span>
             </p>
           </div>
@@ -194,7 +195,7 @@ const Login = (props) => {
                 value={passwords}
               />
               <label>Passward</label>
-              <Link to='' onClick={pswRender}>Forgot?</Link>
+              <Link to='#' onClick={pswRender}>Forgot?</Link>
             </div>
           </div>
 
@@ -224,7 +225,7 @@ const Login = (props) => {
               <p className="registerLink">
                 New to Shopmate?
                 <span>
-                  <Link to='' onClick={registerRnder}> Create an account</Link>
+                  <Link to='#' onClick={registerRnder}> Create an account</Link>
                 </span>
               </p>
             </div>
@@ -235,6 +236,7 @@ const Login = (props) => {
       return (
         <>
           <div className="form-group">
+          
             <div className="inputBox control-label col-sm-2">
               <input
                 type="email"
@@ -246,8 +248,31 @@ const Login = (props) => {
               />
               <label>Email</label>
             </div>
+            <button class='btn btn-danger mt-2 mailconformationbtn' onClick={checkemailregister}>Submit</button>
+           
           </div>
+          
+          {emailvalidate && 
+          <>
+          <p className='mt-2 otpmsg'>OTP(one time password) has sent your email.
+            Please enter the OTP in the field below to verify.</p>
+          <div className="form-group ">
+          <div className="inputBox control-label mt-4 col-sm-2">
+            <input
+              type='number'
+              required
+              onChange={(e) => otpRender(e)}
+              value={otp}
+            />
+            <label>EnterOTP </label>
+          </div>
+          <button class='btn btn-danger mt-2 mailconformationbtn' onClick={checkotpvalidate}>Submit</button>
+        </div>
+          </>}
+            
           <p className="errmsg2">{emaerr}</p>
+          {otpvalidata &&
+          <>
           <div className="form-group ">
             <div className="inputBox control-label mt-4 col-sm-2">
               <input
@@ -301,11 +326,12 @@ const Login = (props) => {
               <p className="registerLink">
                 New to Shopmate?
                 <span>
-                  <Link to='' onClick={registerRnder}> Create an account</Link>
+                  <Link to='#' onClick={registerRnder}> Create an account</Link>
                 </span>
               </p>
             </div>
           </div>
+          </>}
         </>
       );
     }
@@ -324,7 +350,7 @@ const Login = (props) => {
         <div className="modal-dialog " role="document">
           <div className="modal-content">
             <div className="modal-header">
-              {spinner && (
+              {spinner.length > 0 && (
                 <center>
                   <div
                     className="spinner-border"
@@ -366,7 +392,7 @@ const Login = (props) => {
                   </div>
                 </div>
                 <div className="col-md-7">
-                  <form className="contact-form">{contentRender()}</form>
+                  <form className="contact-form formrigth">{contentRender()}</form>
                 </div>
               </div>
             </div>

@@ -15,6 +15,10 @@ import Loader from "./Loader";
 const Profile = (props) => {
 
   useEffect(()=>{
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    })
     props.dispatch(Userinfo(props.location.pathname))
   },[])
   
@@ -41,7 +45,7 @@ const Profile = (props) => {
   }
   }, [props.ldata]);
 
-  const updatedata = (fname, lname, gender, email, phonenum, passwords) => {
+  const updatedata = (fname, lname, gender, email, phonenum) => {
     props.dispatch(
       ProfileUpdate(
         fname,
@@ -49,7 +53,6 @@ const Profile = (props) => {
         gender,
         email,
         phonenum,
-        passwords,
         props.ldata.data.email
       )
     );
@@ -75,7 +78,7 @@ const Profile = (props) => {
             <div className="col-lg-9 col-md-9 ">
               <ProfileDisplay
                 ldata={props.ldata}
-                update={(a, b, c, d, e, f) => updatedata(a, b, c, d, e, f)}
+                update={(a, b, c, d, e) => updatedata(a, b, c, d, e )}
               />
             </div>
           </div>

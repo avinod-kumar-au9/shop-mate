@@ -43,7 +43,7 @@ export const register = async (req, res) => {
                 html:
                   "<h1>Welcome to Shop-Mate</h1><br></br><p>Shop Mate is one of the leading ecommerce store</p><br></br><br></br><strong>Thanks for choosing Shop Mate</strong><p>Shop-Mate Team</p>",
               });
-              console.log(user);
+            
               res
                 .status(200)
                 .send({ data: user, message: "Registered Successfully" });
@@ -118,7 +118,37 @@ export const userinfo = async (req, res) => {
   }
 };
 
+function otpgenerator() {
+  var OTP = '';
+  var possible = '0123456789';
+  for (var i = 0; i < 6; i++) {
+  OTP += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return OTP;
+  }
 
+export const mailregistercheck = async(req,res)=>{
+  try {
+    SellerUsers.findOne({email: req.body.email }, async (err, data) => {
+        if(data){
+        var otp = otpgenerator()
+        transporter.sendMail({
+          to: req.body.email,
+          from: "singhdhobe@gmail.com",
+          subject: "Shop-Mate's OTP Verification",
+          html:
+            `<h1>Welcome to Shop-Mate</h1><br></br><p>Dear customer,Your OTP for password reset is ${otp}.Use this OTP to reset your password. </p><br></br><p>Shop-Mate Team</p>`,
+        });
+          res.status(200).send({data:data,OTP:otp,message:'Mail exist'})
+        }
+          else{
+            res.status(200).send({message:""})
+          }
+    })}
+     catch {
+      res.status(404).send(err)
+    }
+}
 
 export const forgotpsw = (req, res) => {
   var hashpassword = bcrypt.hashSync(req.body.password, 8);

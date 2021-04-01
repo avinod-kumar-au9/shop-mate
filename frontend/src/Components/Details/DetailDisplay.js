@@ -335,7 +335,7 @@ const DetailDisplay = (props) => {
             {detail[0].category !== "Fashion" && (
               <div className="d-flex  mt-4">
                 <p className="margin  sidehead">Warrenty</p>
-                <div className="ml-3">
+                <div className="ml-3 boldletters">
                   <div>
                     <b>Covered in Warranty:</b>{" "}
                     {detail[0].warranty.CoveredInWarranty}

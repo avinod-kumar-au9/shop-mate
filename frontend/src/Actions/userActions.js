@@ -134,6 +134,27 @@ export function Userinfo(props) {
   }
 }
 
+export function EmailRegistercheck(mail,props){
+  let route = "";
+  if (props.includes("seller")) {
+    route = "/api/seller/emailregistercheck";
+  } else {
+    route = "/api/customers/emailregistercheck";
+  }
+  const output = axios.post(`${url}${route}`, {
+    email: mail
+  });
+    return (dispatch) => {
+      output.then(({ data }) => {
+        dispatch({
+          type: "FORGOTPSW",
+          payload: data,
+        });
+      });
+    };
+}
+
+
 export function ForgotPswdata(mail, psw, props) {
   let route = "";
   if (props.includes("seller")) {
@@ -173,7 +194,6 @@ export function ProfileUpdate(
   gender,
   mail,
   phonenum,
-  psw,
   oldemail
 ) {
   const output = axios.patch(`${url}/api/customers/profile`, {
@@ -183,7 +203,6 @@ export function ProfileUpdate(
     gender: gender,
     phoneNumber: phonenum,
     oldemail: oldemail,
-    password: psw,
   });
   return (dispatch) => {
     output.then(({ data }) => {

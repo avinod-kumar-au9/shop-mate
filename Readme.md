@@ -10,8 +10,8 @@ _____
 
 ## Installation Guide:
 ____________
-* Either Download the Repo,Which you will find at the top right of Repo link or clone it in your Local Machine.
-        git clone https://github.com/attainu/fullstack-project-Ramya-shree-au9.git
+* Clone the repo in to your Local Machine and install all the required packages with the command npm i
+ 
 
 
 
